@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Horóscopo do Dia</title>
+    <style>
+        body {
+            background: #fafafa;
+            font-family: Arial, sans-serif;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 32px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 32px;
+        }
+        h1 {
+            text-align: center;
+            color: #4e54c8;
+            margin-bottom: 8px;
+        }
+        .date {
+            text-align: center;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .signo {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .signo:last-child {
+            border-bottom: none;
+        }
+        .signo h2 {
+            color: #4e54c8;
+            margin: 0 0 6px 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Horóscopo do Dia</h1>
+        <div class="date">Data: {{ data }}</div>
+        {% for signo, mensagem in horoscopo.items() %}
+        <div class="signo">
+            <h2>{{ signo }}</h2>
+            <div>{{ mensagem }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html> 
